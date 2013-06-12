@@ -8,7 +8,7 @@ before_filter :secretword
   end
   @vendorshown = Vendor.find(cookies[:vendid])
 rescue ActiveRecord::RecordNotFound
-    
+    @vendorshown = Vendor.find(1)
 end
   private
   def current_cart

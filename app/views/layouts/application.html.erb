@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
- <% if params[:controller] != "vendors" %> <title><%= @vendorshown.vendor_name %></title><%end%>
+ <title><%= @vendorshown.vendor_name %></title>
   <%= stylesheet_link_tag    "newstyle", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -45,9 +44,8 @@ setInterval('swapImages()', 5000);
   </style> 
 </head>
 <body>
-  <% if params[:controller] != "vendors" %>
 	<%= link_to products_path do%>
-<%= image_tag @vendorshown.vendor_image, :height => "100" %><%end%><%end%>
+<%= image_tag @vendorshown.vendor_image, :height => "100" %><%end%>
 <div id="columns">
 	<div id="side">
 		<% if params[:controller] != "vendors" %>
