@@ -63,7 +63,7 @@ module Akimono
     config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  :domain               => "akimono.com",
+  :domain               => "http://dry-woodland-1410.herokuapp.com/",
   :user_name            => "contact@akimono.com",
   :password             => "Evergreen88",
   :authentication       => :plain,
@@ -71,7 +71,7 @@ module Akimono
 }
 
 config.action_mailer.default_url_options = {
-  :host => "localhost:3000"
+  :host => "http://dry-woodland-1410.herokuapp.com/"
 }
 config.action_mailer.raise_delivery_errors = true
   end
