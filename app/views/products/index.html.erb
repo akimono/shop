@@ -1,0 +1,40 @@
+<br><br><div class="browse">
+        <%= link_to :order => 'name' do %> <div class="bar">Sort by Name</div><% end %>
+        <%= link_to :order => 'price' do %><div class="bar">Sort by Price</div><%end%>
+        <%= link_to :order => 'type' do %> <div class="bar">Sort by Type</div><%end%>
+        <% @listing = Array.new %>
+
+        <% @allproducts.each do |product| %>
+        <% unless @listing.include?(product.producttype) %>
+          <% @listing << product.producttype %>
+            
+              <%= link_to :order => product.producttype do %><div class="bar">
+              <%= product.producttype %>
+            </div>
+            <%end%>
+          <% end %>
+          <% end %>
+          <%= link_to :order => nil do %><div class="bar">Show All Products</div><%end%>
+</div>
+<div class="show">
+<% @products.each do |product| %>
+<% unless product.quantity == 0 && cookies[:vendid] != @secretword %>
+<div class="boxes">
+    <%= link_to product do %>
+    <%= product.name %><br>
+    <%= image_tag product.image, :width => "150" %><br>
+    <%= product.price %><br>
+    <% end %>
+   <% if cookies[:vendid] == @secretword %>
+    <%= link_to 'Edit', edit_product_path(product) %><br>
+    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    </div>
+  <%end%>
+<% end %>
+<br />
+<% if cookies[:vendid] == @secretword %>
+<%= link_to 'New Product', new_product_path %>
+<%= link_to 'Vendors', vendors_path %>
+<% end %>
+</div>
