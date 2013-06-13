@@ -7,21 +7,19 @@ Akimono::Application.configure do
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-config.action_mailer.default_url_options = { :host => 'http://dry-woodland-1410.herokuapp.com/' }
 # ActionMailer Config
 # Setup for production - deliveries, no errors raised
-config.action_mailer.delivery_method = :smtp
-config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = false
-config.action_mailer.default :charset => "utf-8"
+
+config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
-  address: "smtp.gmail.com",
-  port: 587,
-  domain: "http://dry-woodland-1410.herokuapp.com/",
-  authentication: "plain",
-  enable_starttls_auto: true,
-  user_name: ENV["contact@akimono.com"],
-  password: ENV["Evergreen88"]
+  :endable_starttls_auto => true,
+  :address => 'smtp.gmail.com',
+  :port => 587,
+  :authentication => :plain,
+  :domain => 'akimono.herokuapp.com',
+  :user_name => 'contact@akimono.com',
+  :password => 'Evergreen88'
 }
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false

@@ -1,8 +1,8 @@
 class ContactMailer < ActionMailer::Base
-  default from: "contact@akimono.com"
-  default to: "contact@akimono.com"
-  def new_message(message)
-  	@message = message
-  	mail(:subject => "Akimono.com #{message.subject}")
-  end
+def contact
+  subject 'Message via Gmail'
+  recipients 'contact@akimono.com'
+  from 'frank.cioppettini@gmail.com'
+  sent_on Time.now
+end
 end
