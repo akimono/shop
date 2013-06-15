@@ -1,4 +1,4 @@
-class ContactController < ApplicationController
+class ContactorsController < ApplicationController
 	def index
 		@cart = current_cart
 		@contactor = Contactor.new
@@ -11,3 +11,4 @@ class ContactController < ApplicationController
 			redirect_to root_path
 		end
 end
+
