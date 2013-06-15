@@ -18,7 +18,7 @@ match '/about' =>'static_pages#about'
 match '/business' => 'static_pages#business'
 match '/faq' => 'static_pages#faq'
 match '/payments' => 'static_pages#payments'
-match 'contact' => 'contact#new', :as => 'contact', :via => :get
+match 'contact' => 'contact#index', :as => 'contact', :via => :get
 match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
   # The priority is based upon order of creation:
