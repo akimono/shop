@@ -8,6 +8,6 @@ class ContactController < ApplicationController
 		@contactor = @contactor
 			ContactMailer.contact_email(@contactor).deliver
 			flash[:notice] = "Message has been sent"
-			redirect_to root_path
+			redirect_to contact_path
 		end
 end
