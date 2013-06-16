@@ -3,19 +3,19 @@
   <br> All emails should be answered in approximately one business day.<bt> If you do not hear from us soon don't be afraid to try again!<br>
 <%= form_for @contactor, :action => "create" do |f| %>
   <div class="field">
-    Your Name:<br />
+    Your Name:
     <%= f.text_field :contactorname %>
   </div>
     <div class="field">
-    Your Email (double check before submitting):<br />
+    Your Email (double check before submitting):
     <%= f.text_field :contactoremail %>
   </div>
     <div class="field">
-    Subject:<br />
+    Subject:
     <%= f.select :contactorsubject, options_for_select([['Payment Options', 'Payment Options'], ['Importation', 'Importation'], ['About an Item in Stock', 'About an Item in Stock'], ['Other Product', 'Other Product'], ['Add me to your Mailing List', 'Mailing List'], ['Business Proposition', 'Business Proposition'], ['Other', 'Other']]) %>
   </div>
     <div class="field">
-    Body:<br />
+    Body:
     <%= f.text_field :contactorbody %>
   </div>
     <div class="actions">
