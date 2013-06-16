@@ -1,24 +1,30 @@
 <center>
   <b>Contact Us!</b>
   <br> All emails should be answered in approximately one business day.<bt> If you do not hear from us soon don't be afraid to try again!<br>
-  <table width = "500"><tr><td><left>
-<%= form_for @contactor, :action => "create" do |f| %>
-  <div class="field">
-    Your Name:
+  <table width = "500"><left><%= form_for @contactor, :action => "create" do |f| %><tr><td>
+
+  
+    Name:</td>
+    <td>
     <%= f.text_field :contactorname %>
-  </div>
-    <div class="field">
-    Your Email (double check before submitting):
-    <%= f.text_field :contactoremail %>
-  </div>
-    <div class="field">
-    Subject:
+</td>
+<tr><td>    
+    Your Email (double check before submitting):</td>
+    <td>
+    <%= f.text_field :contactoremail %></td>
+    <tr><td>
+  
+    
+    Subject:</td>
+    <td>
     <%= f.select :contactorsubject, options_for_select([['Payment Options', 'Payment Options'], ['Importation', 'Importation'], ['About an Item in Stock', 'About an Item in Stock'], ['Other Product', 'Other Product'], ['Add me to your Mailing List', 'Mailing List'], ['Business Proposition', 'Business Proposition'], ['Other', 'Other']]) %>
-  </div>
-    <div class="field">
-    Body:
+  </td>
+  <tr><td>
+  
+    Body: </td>
+    <td>
     <%= f.text_area :contactorbody, :cols => "25", :rows => "6" %>
-  </div>
+  </td>
     <div class="actions">
     <%= f.submit %>
   </div>
