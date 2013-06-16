@@ -1,7 +1,7 @@
 <center>
   <b>Contact Us!</b>
   <br> All emails should be answered in approximately one business day.<bt> If you do not hear from us soon don't be afraid to try again!<br>
-  <table width = "500"><left><%= form_for @contactor, :action => "create" do |f| %><tr><td>
+  <table width = "500"><left><b><%= form_for @contactor, :action => "create" do |f| %><tr><td>
 
   
     Name:</td>
@@ -21,14 +21,15 @@
   </td>
   <tr><td>
   
-    Body: </td>
+    Comments: </td>
     <td>
     <%= f.text_area :contactorbody, :cols => "25", :rows => "6" %>
   </td>
+  <tr><td></td><td>
     <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-</left></td>
+</left></td></b>
 </table>
 </center>
