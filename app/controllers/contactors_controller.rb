@@ -5,7 +5,7 @@ class ContactorsController < ApplicationController
 	end
 	def create
 		@cart = current_cart
-        @contactor = params[:contactoremail]
+        @contactor = Contactor.new(params[:contactor])
 			ContactMailer.contact_email(@contactor).deliver
 			flash[:notice] = "Message has been sent"
 			redirect_to root_path
