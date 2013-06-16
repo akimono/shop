@@ -12,7 +12,7 @@
   </div>
     <div class="field">
     Subject:<br />
-    <%= f.select (:contactorsubject, [['Payment Options', 'Payment Options'], ['Importation', 'Importation'], ['About an Item in Stock', 'About an Item in Stock'], ['Other Product', 'Other Product'], ['Add me to your Mailing List', 'Mailing List'], ['Business Proposition', 'Business Proposition'], ['Other', 'Other']]) %>
+    <%= f.select :contactorsubject, options_for_select([['Payment Options', 'Payment Options'], ['Importation', 'Importation'], ['About an Item in Stock', 'About an Item in Stock'], ['Other Product', 'Other Product'], ['Add me to your Mailing List', 'Mailing List'], ['Business Proposition', 'Business Proposition'], ['Other', 'Other']]) %>
   </div>
     <div class="field">
     Body:<br />
