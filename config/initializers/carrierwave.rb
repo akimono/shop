@@ -4,7 +4,7 @@ CarrierWave.configure do |config|
 		:provider => 'AWS',
 		:aws_acess_key_id => ENV[AKIAI2AVYGJ3CUGRYP6Q],
 		:aws_secret_access_key => ENV[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],
-		:region => ENV['Oregon']
+		:region => ENV['s3-us-west-2']
 	}
 	config.cache_dir = "#{Rails.root}/tmp/uploads"
 	config.fog_directory = ENV['akimono']
