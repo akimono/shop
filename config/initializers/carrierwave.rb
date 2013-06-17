@@ -9,5 +9,5 @@ CarrierWave.configure do |config|
 	config.cache_dir = "#{Rails.root}/tmp/uploads"
 	config.fog_directory = ENV['akimono']
 	config.s3_access_policy = :public_read
-	config.fog_host = "#{ENV['https://s3-us-west-2.amazonaws.com/akimono/'']}/#{ENV['akimono']}"
+	config.fog_host = "#{ENV['https://s3-us-west-2.amazonaws.com/akimono/']}/#{ENV['akimono']}"
 end
