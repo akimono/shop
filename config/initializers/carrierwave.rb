@@ -11,8 +11,8 @@ CarrierWave.configure do |config|
  
     # Configuration for Amazon S3
     :provider              => 'AWS',
-    :aws_access_key_id     => ENV['AKIAI2AVYGJ3CUGRYP6Q'],
-    :aws_secret_access_key => ENV['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'],
+    :aws_access_key_id     => ENV['S3_KEY'],
+    :aws_secret_access_key => ENV['S3_SECRET'],
     #:region                => ENV['S3_REGION']
   }
  
@@ -29,8 +29,7 @@ CarrierWave.configure do |config|
   config.fog_public = false
   config.fog_directory    = ENV['akimono']
 
-  compute = Fog::Compute.new(:provider => 'AWS', :aws_access_key_id => 'AKIAI2AVYGJ3CUGRYP6Q', :aws_secret_access_key => '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')
-  storage = Fog::Storage.new(:provider => 'AWS', :aws_access_key_id => 'AKIAI2AVYGJ3CUGRYP6Q', :aws_secret_access_key => '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')
+  
   # config.s3_access_policy = :public_read                          # Generate http:// urls. Defaults to :authenticated_read (https://)
   #config.fog_host         = "#{ENV['S3_ASSET_URL']}/#{ENV['S3_BUCKET_NAME']}"
 end
