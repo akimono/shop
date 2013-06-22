@@ -1,27 +1,35 @@
 <center>
-  <b>Contact Us!</b>
-  <br> All emails should be answered in approximately one business day.<bt> If you do not hear from us soon don't be afraid to try again!<br><br><br>
+  <b>Join our vendor program and start making easy money!</b>
+  <br> We are happy to suport 3rd party vendors by supplying them with everything they need to start selling our products. By joining you can choose to either purchase machines to keep in stock at wholesale prices, to use drop shipping to sell anything we have in stock and have us ship it to your client, or both! <br><br>
+There is no minimum purchase amount for an order or hidden fees associated with creating a vendor account. With your vendor account you will receive a link to your own version of our website to use for sales: <a href="index.html?vendid=2">See this Example </a>. Use the link on your own site or keep it in your store to show clients what other machines you "keep in stock". All orders through your site will be processed and shipped by us and you will recieve a commission based on your vendor level. Vendor levels and requirements are shown below. (comissions will be paid monthly by paypal or check. The payment method is your choice, but all check payments must be larger than $25) 
+  <br><br>
+  <table> <TH> Vendor Levels </th><th> Machines Sold or Purchased Annually</th><th>Commission/Discount</th>
+    <tr> <td> <b>Bronze Level</b></td> <td> 15 or fewer </td> <td> 8% </td>
+    <tr> <td> <b> Silver Level </b> </td><td> 16 to 100 </td> <td> 11% </td>
+    <tr> <td> <b> Gold Level </b> </td><td> Greater than 100 machines </td><td> 15%</td>
+
+      <br><br><b>
+      To start the application process just fill out the information below and we will contact you to complete the process. </b><br><br>
   <table width = "500"><left><b><%= form_for @contactor, :action => "create" do |f| %><tr><td>
-    Name:</td>
+    Company Name:</td>
     <td>
     <%= f.text_field :contactorname %>
 </td>
 <tr><td>    
-    Your Email (double check):</td>
+    Company Email (double check as it will be used for all communications):</td>
     <td>
     <%= f.text_field :contactoremail %></td>
     <tr><td>
   
-    
-    Subject:</td>
+    Preferred Payment Method:</td>
     <td>
-    <%= f.select :contactorsubject, options_for_select([['Payment Options', 'Payment Options'], ['Importation', 'Importation'], ['About an Item in Stock', 'About an Item in Stock'], ['Other Product', 'Other Product'], ['Add me to your Mailing List', 'Mailing List'], ['Business Proposition', 'Business Proposition'], ['Other', 'Other']]) %>
+    <%= f.select :contactorsubject, options_for_select([['PayPal', 'PayPal'], ['Check', 'Check']) %>
   </td>
   <tr><td>
   
-    Comments: </td>
+    Detailed contact information and Address: </td>
     <td>
-    <%= f.text_area :contactorbody, :cols => "25", :rows => "6" %>
+    <%= f.text_area :contactorbody, :cols => "25", :rows => "6", :value => "John Smith, Johnsmith@example.com, 123 Fake Street, Washington TWP, Washington 99999 <br><br> Tel: (999) 999-9999 Cell: (999) 999-9999" %>
   </td>
   <tr><td></td><td>
     <div class="actions">
