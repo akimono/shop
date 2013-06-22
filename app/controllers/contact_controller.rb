@@ -1,4 +1,4 @@
-class ContactController < ApplicationController
+class ContactsController < ApplicationController
 	def index
 		@cart = current_cart
 		@contact = Contact.new
