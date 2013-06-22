@@ -13,7 +13,7 @@ Akimono::Application.routes.draw do
 
   resources :products
   resources :contactors
-  resources :contact
+
 match '/about' =>'static_pages#about'
 
 match '/business' => 'static_pages#business'
