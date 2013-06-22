@@ -12,7 +12,6 @@ Akimono::Application.routes.draw do
 
 
   resources :products
-  resources :contactors
 
 match '/about' =>'static_pages#about'
 
@@ -21,7 +20,8 @@ match '/faq' => 'static_pages#faq'
 match '/payments' => 'static_pages#payments'
 match 'contact' => 'contact#index', :as => 'contact', :via => :get
 match 'contact' => 'contact#create', :as => 'contact', :via => :post
-
+match 'contactors' => 'contactors#index', :as => 'contactors', :via => :get
+match 'contactors' => 'contactors#create', :as => 'contactors', :via => :post
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
