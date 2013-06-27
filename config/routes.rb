@@ -16,6 +16,7 @@ Akimono::Application.routes.draw do
   resources :contacts
   resources :contactor
   resources :contactors
+  
 match '/about' =>'static_pages#about'
 
 match '/business' => 'static_pages#business'

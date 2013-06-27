@@ -13,10 +13,12 @@ class ProductsController < ApplicationController
     elsif (params[:order] != nil)
       @products = Product.find_all_by_producttype(params[:order])
     end
+    @products = @products.paginate(:page => params[:page], :per_page => 16)
     @cart = current_cart
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
+      
     end
   end
 
