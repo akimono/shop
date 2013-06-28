@@ -19,47 +19,10 @@
 </div>
 <div class="show">
 <div id="products">
-  <div class='page'>
 <%= render @products %>
-</div>
 </div>
 <% if cookies[:vendid] == @secretword %>
 <%= link_to 'New Product', new_product_path %>
 <%= link_to 'Vendors', vendors_path %>
 <% end %>
 </div>
-
-<script type="text/javascript">
-
-
-(function() {
-  var page = 1,
-      loading = false;
-
-  function nearBottomOfPage() {
-    return $(window).scrollTop() > $(document).height() - $(window).height() - 200;
-  }
-
-  $(window).scroll(function(){
-    if (loading) {
-      return;
-    }
-
-    if(nearBottomOfPage()) {
-      loading=true;
-      page++;
-      $.ajax({
-        url: '/products?page=' + page,
-        type: 'get',
-        dataType: 'script',
-        success: function() {
-          $(window).sausage('draw');
-          loading=false;
-        }
-      });
-    }
-  });
-
-  $(window).sausage();
-}());
-</script>
