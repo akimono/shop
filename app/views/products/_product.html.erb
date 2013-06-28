@@ -1,4 +1,4 @@
-<% @products.each do |product| %>
+
 <% unless product.quantity == 0 && cookies[:vendid] != @secretword %>
 <div class="boxes">
     <%= link_to product do %>
@@ -12,4 +12,3 @@
     <% end %>
     </div>
   <%end%>
-<% end %>
