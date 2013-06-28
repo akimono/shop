@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<% if cookies[:vendid] == @secretword %>
+<p>
+  <b>Vendor name:</b>
+  <%= @vendor.vendor_name %>
+</p>
+
+<p>
+  <b>Vendor email:</b>
+  <%= @vendor.vendor_email %>
+</p>
+
+<p>
+  <b>Vendor image:</b>
+  <%= image_tag @vendor.vendor_image %>
+</p>
+
+<p>
+  <b>Vendor products:</b>
+  <%= @vendor.vendor_products %>
+</p>
+
+<p>
+  <b>Vendor notes:</b>
+  <%= @vendor.vendor_notes %>
+</p>
+
+<p>
+  <b>Vendor payment:</b>
+  <%= @vendor.vendor_payment %>
+</p>
+
+
+<%= link_to 'Edit', edit_vendor_path(@vendor) %> |
+<%= link_to 'Back', vendors_path %>
+<% end %>

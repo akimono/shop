@@ -1,0 +1,14 @@
+
+<% unless product.quantity == 0 && cookies[:vendid] != @secretword %>
+<div class="boxes">
+    <%= link_to product do %>
+    <%= product.name %><br>
+    <%= image_tag product.image, :width => "150" %><br>
+    $<%= product.price %><br>
+    <% end %>
+   <% if cookies[:vendid] == @secretword %>
+    <%= link_to 'Edit', edit_product_path(product) %><br>
+    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    </div>
+  <%end%>

@@ -1,0 +1,36 @@
+<h1>Listing vendors</h1>
+<% if cookies[:vendid] == @secretword %>
+<table>
+  <tr>
+    <th>Vendor ID</th>
+    <th>Vendor name</th>
+    <th>Vendor email</th>
+    <th>Vendor image</th>
+    <th>Vendor products</th>
+    <th>Vendor notes</th>
+    <th>Vendor payment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vendors.each do |vendor| %>
+  <tr>
+    <td><%= vendor.id %></td>
+    <td><%= vendor.vendor_name %></td>
+    <td><%= vendor.vendor_email %></td>
+    <td><%= image_tag vendor.vendor_image %></td>
+    <td><%= vendor.vendor_products %></td>
+    <td><%= vendor.vendor_notes %></td>
+    <td><%= vendor.vendor_payment %></td>
+    <td><%= link_to 'Show', vendor %></td>
+    <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
+    <td><%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vendor', new_vendor_path %>
+<% end %>

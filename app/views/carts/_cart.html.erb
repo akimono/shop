@@ -1,0 +1,22 @@
+<% unless cart.line_items.empty? %>
+<div class="cart">
+<div class="cart_title"> Your Cart</div>
+<table>
+	<tr><td> Name </td><td> Quantity </td>
+	<%= render(cart.line_items) %>
+    <tr>
+    	<td colspan="2">Shipping price to continental US included</td>
+    	<tr><td colspan="2">Tax calculated for SC only on checkout
+	<tr class="total_line">
+		<td colspan ="2"> Total </td>
+		<td class="total_cell"> <%= number_to_currency(cart.total_price) %></td>
+	</tr>
+</table>
+<%= button_to 'Empty Cart', cart, :method => :delete, :confirm => 'Are you sure?'%>
+<script src="/assets/paypal-button.min.js?merchant=4S899JXGNHQVA"
+    data-button="buynow"
+    data-name="<%= @vendorshown.vendor_name %> Order: <% cart.line_items.each do |line_item| %> <%= line_item.product.name %>, quantity: <%= line_item.line_quantity %>, <% end %>"
+    data-amount="<%= cart.total_price %>"
+></script>
+</div>
+<% end %>
