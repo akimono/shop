@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     @cart = current_cart
     respond_to do |format|
       format.html # index.html.erb
-      format.json
+      format.json {render json: @product}
 
     end
   end
