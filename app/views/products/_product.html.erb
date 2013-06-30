@@ -2,7 +2,7 @@
 <% unless product.quantity == 0 && cookies[:vendid] != @secretword %>
 <div class="boxes">
     <%= link_to product do %>
-    <table><tr><td height="25">
+    <table><tr><td height="50">
     <%= product.name %><br></td>
     <tr><td>
     <%= image_tag product.image, :width => "150" %><br>
