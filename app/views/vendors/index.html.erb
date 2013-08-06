@@ -25,7 +25,7 @@
     <td><%= vendor.vendor_payment %></td>
     <td><%= link_to 'Show', vendor %></td>
     <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
-    <td><%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><% if vendor.id != 1 && vendor.id != 2 %><%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></td>
   </tr>
 <% end %>
 </table>
