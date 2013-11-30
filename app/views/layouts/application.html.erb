@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title><%= @vendorshown.vendor_name %></title>
+  <%= stylesheet_link_tag    "newstyle", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script>
+   function swapImages(){
+var $active = $('#myGallery .active');
+var $next = ($('#myGallery .active').next().length > 0) ? $('#myGallery .active').next() : $('#myGallery img:first');
+$active.fadeOut(1000, function(){
+$active.removeClass('active');
+$next.fadeIn(1000).addClass('active');
+});
+}
+
+$(document).ready(function(){
+// Run our swapImages() function every 5secs
+setInterval('swapImages()', 5000);
+});
+  </script>
+
+    <style>
+    #myGallery{
+      position:relative;
+	  top:50px;
+	  left:180px;
+      width:400px; /* Set your image width */
+      height:300px; /* Set your image height */
+      z-index: -1;
+    }
+    #myGallery img{
+      display:none;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+    #myGallery img.active{
+      display:block;
+    }
+  </style> 
+</head>
+<body>
+	<%= link_to products_path do%>
+<%= image_tag @vendorshown.vendor_image, :height => "100" %><%end%>
+
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    gaTrack: true,
+    gaId: 'UA-21893067-1',
+    floatPosition: google.translate.TranslateElement.FloatPosition.TOP_RIGHT
+  });
+}
+</script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<div id="preload">
+   <%= image_tag "/assets/button.png", :border=>'0', :alt => nil %>
+   <%= image_tag "/assets/button2.png", :border=>'0', :alt => nil %>
+</div>
+<div id="columns">
+	<div id="side">
+		<% if params[:controller] != "vendors" %>
+		<div id="cart"
+			<% if @cart.line_items.empty? %>
+			  style="display: none"
+			  <% end %>
+			  >
+			<%= render @cart %>
+		</div>
+		<%end%>
+	</div>
+	
+	</div>
+	<%= link_to products_path do%><div class="topbar">Home</div> <% end %>
+	<%= link_to faq_path do%><div class="topbar">FAQ</div> <% end %>
+	<%= link_to contact_path do%><div class="topbar">Contact Us</div> <% end %>
+	<%= link_to contactors_path do%><div class="topbar">Be A Vendor</div> <% end %>
+	<%= link_to about_path do%><div class="topbar" style="font-size:14px;"> International Shipping</div> <% end %>
+	<%= link_to payments_path do%><div class="topbar">We Buy Games</div> <% end %>
+	
+	 <div id="myGallery">
+	  <%= image_tag("image1.jpg", :class => "active", :width => "700") %>
+    <%= image_tag "image2.jpg", :width => "700"%>
+   <%= image_tag "image3.jpg", :width => "700" %>
+
+  </div>
+  
+    <div id="main" >
+      <%= yield %>
+  </div>
+</div>
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21893067-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+</body>
+</html>
