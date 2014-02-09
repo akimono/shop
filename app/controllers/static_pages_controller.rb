@@ -14,7 +14,7 @@ class StaticPagesController < ApplicationController
 	def contact
 		@cart = current_cart
 	end
-	def pachinomanual
+	def pachinkomanual
 		@cart = current_cart
 	end
 end
