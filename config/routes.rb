@@ -18,8 +18,8 @@ Akimono::Application.routes.draw do
   resources :contactors
   
 match '/about' =>'static_pages#about'
-
-match '/business' => 'static_pages#business'
+match '/pachinkomanual' => 'static_pages#pachinkomanual'
+match '/pachislomanual' => 'static_pages#pachislomanual'
 match '/faq' => 'static_pages#faq'
 match '/payments' => 'static_pages#payments'
 match 'contacts' => 'contact#index', :as => 'contact', :via => :get

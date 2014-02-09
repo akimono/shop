@@ -5,13 +5,16 @@ class StaticPagesController < ApplicationController
 	def payments
 		@cart = current_cart
 	end
-	def business
+	def pachislomanual
 		@cart = current_cart
 	end
 	def about
 		@cart = current_cart
 	end
 	def contact
+		@cart = current_cart
+	end
+	def pachinomanual
 		@cart = current_cart
 	end
 end
