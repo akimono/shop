@@ -45,7 +45,7 @@ setInterval('swapImages()', 5000);
 </head>
 <body>
 	<%= link_to products_path do%>
-<%= image_tag @vendorshown.vendor_image, :height => "100" %><%end%><%= image_tag "/assets/giveaway.jpg", :border=>'0', :alt => nil, :height => "100" %>
+<%= image_tag @vendorshown.vendor_image, :height => "100" %><%end%><% image_tag "/assets/giveaway.jpg", :border=>'0', :alt => nil, :height => "100" %>
 
 <script>
 function googleTranslateElementInit() {
