@@ -19,5 +19,7 @@ class StaticPagesController < ApplicationController
 	end
 	def confirmation
 		@cart = current_cart
+		@products = Product.all
+		@products = Product.find_all_by_producttype("Parts and Accessories")
 	end
 end

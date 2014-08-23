@@ -1,1 +1,29 @@
-Confirmation Page info here
+<center><br><br>
+
+	Thank you for your order. If you have any questions please contact us at Contact@Akimono.com. Orders of machines will be shipped by Fedex ground, accessories are shipped by USPS. Most orders arrive within 5-7 business days, but delays may happen after new shipments arrive or during the holiday season. All machines will be tested for functionality before shipping which may also cause a delay if any problems arise. <br><br>
+
+	Also consider adding some accessories to your order:
+
+	<% unless product.quantity == 0 && cookies[:vendid] != @secretword %>
+<div class="boxes">
+    <%= link_to product do %>
+    <table><tr><td height="80">
+    <%= product.name %><br></td>
+    <tr><td>
+    <%= image_tag product.image, :width => "150" %><br>
+    $<%= product.price %><br>
+    <% end %>
+   <% if cookies[:vendid] == @secretword %>
+    <%= link_to 'Edit', edit_product_path(product) %><br>
+    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+</td>
+</table>
+    </div>
+  <%end%>
+
+
+
+
+
+</center>
