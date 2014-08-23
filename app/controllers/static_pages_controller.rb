@@ -17,4 +17,7 @@ class StaticPagesController < ApplicationController
 	def pachinkomanual
 		@cart = current_cart
 	end
+	def confirmation
+		@cart = current_cart
+	end
 end

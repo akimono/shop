@@ -26,6 +26,7 @@ match 'contacts' => 'contact#index', :as => 'contact', :via => :get
 match 'contacts' => 'contact#create', :as => 'contact', :via => :post
 match 'contactors' => 'contactors#index', :as => 'contactors', :via => :get
 match 'contactors' => 'contactors#create', :as => 'contactors', :via => :post
+match '/confirmation' => 'static_pages#confirmation', 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
