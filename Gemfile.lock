@@ -68,7 +68,7 @@ GEM
     mime-types (1.23)
     multi_json (1.0.4)
     net-scp (1.0.4)
-      net-ssh (>= 1.99.1)
+      net-ssh (1.99.1)
     net-ssh (2.6.7)
     nokogiri (1.5.10-x86-mingw32)
     pg (0.17.1-x86-mingw32)
