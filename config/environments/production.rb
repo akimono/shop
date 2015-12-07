@@ -19,7 +19,7 @@ config.action_mailer.smtp_settings = {
   :authentication => :plain,
   :domain => 'akimono.herokuapp.com',
   :user_name => 'contact@akimono.com',
-  :password => 'Evergreen88'
+  :password => 'Twenty20'
 }
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
